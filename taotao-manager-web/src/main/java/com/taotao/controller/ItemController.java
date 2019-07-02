@@ -29,4 +29,10 @@ public class ItemController {
 		EasyUIDataGridResult result = itemService.gteItemList(page, rows);
 		return result;
 	};
+	
+	
+	
+	
+	
+	
 }
