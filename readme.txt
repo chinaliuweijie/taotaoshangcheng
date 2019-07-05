@@ -51,7 +51,7 @@ git clone https://github.com/gubai/gubai.git
 5.git pull   拉去代码  更新代码
 2.git status查看状态
 3.git add *   add代码缓冲区
-4.git commit -m "更新说明”      commit只是提交到缓存区域
+4.git commit -m "更新说明"      commit只是提交到缓存区域
 6.git push origin master   push到远程master分支上
 
 事物的理解，在添加商品的时候：
