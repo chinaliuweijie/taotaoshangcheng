@@ -112,6 +112,26 @@
 	   <artifactId>mybatis-paginator</artifactId>
 	</dependency>
 
+
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+	</dependency>
+	<!--  fastdfs-client-java 依赖。 -->
+	<dependency>
+	     <groupId>org.csource</groupId>
+	     <artifactId>fastdfs-client-java</artifactId>
+  	</dependency>
+ 			
+	
+	<dependency>
+		<groupId>commons-fileupload</groupId>
+		<artifactId>commons-fileupload</artifactId>
+	</dependency>
+
+
+
+
 	
   </dependencies>
 

@@ -35,6 +35,7 @@
 		<activemq.version>5.11.2</activemq.version>
 		<freemarker.version>2.3.23</freemarker.version>
 		<quartz.version>2.2.2</quartz.version>
+		<fastdfs-client-java.version>1.27-SNAPSHOT</fastdfs-client-java.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -222,7 +223,13 @@
 				<artifactId>freemarker</artifactId>
 				<version>${freemarker.version}</version>
 			</dependency>
- 
+ 			<!--fastdfs-client-java  -->
+ 			<dependency>
+			     <groupId>org.csource</groupId>
+			     <artifactId>fastdfs-client-java</artifactId>
+			     <version>${fastdfs-client-java.version}</version>
+             </dependency>
+ 			
 		</dependencies>
 	</dependencyManagement>
  

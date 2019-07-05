@@ -33,7 +33,7 @@ https://blog.csdn.net/weixin_39202006/article/details/78870963
 解压缩文件：tar -zxvf jdk-7u80-linux-x64.gz -C /usr/java
 编辑文件：vim /etc/profile   
 Shift+G 快速到文件末尾   按a或者i进入编辑模式  底部会有insert显示
-按esc 键，输入:wq  保存并推出    :!q 不保存推出
+按esc 键，输入:wq  保存并推出    :q！ 不保存推出
 
 
 
@@ -42,4 +42,22 @@ gitignore只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，
 git rm -r --cached .
 git add .
 git commit -m 'update .gitignore'
+
+
+
+git 提交代码   ---
+1.clone自己github上的代码
+git clone https://github.com/gubai/gubai.git
+5.git pull   拉去代码  更新代码
+2.git status查看状态
+3.git add *   add代码缓冲区
+4.git commit -m "更新说明”      commit只是提交到缓存区域
+6.git push origin master   push到远程master分支上
+
+事物的理解，在添加商品的时候：
+ 添加商品和商品描述对应的都是单表操作，因此我们使用逆向工程生成的代码即可，也就是说我们不用写Dao层的代码。下面我们来写Service层代码，首先在ItemService接口当中添加一个"添加商品"的接口（这一个接口要操作两张表，一张是商品表，另一张是商品描述表）。如下图所示，参数有两个，一个是商品表的pojo，另一个是商品描述。之所以要抛出异常是因为这个接口要操作两张表，而且这两张表的操作要都成功才叫成功，否则事务就回滚，因此异常要向上抛，在实现类代码中不能用try catch来捕获异常，因为这样的话springmvc会认为代码正常结束了，便不会回滚。
+
+
+
+
 
