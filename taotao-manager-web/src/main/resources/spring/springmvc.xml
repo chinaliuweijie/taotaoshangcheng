@@ -41,10 +41,10 @@
 	<!--订阅 dubbo的服务 -->
 	<!-- 引用dubbo服务 -->
 	<dubbo:application name="taotao-manager-web"/>
-	<dubbo:registry protocol="zookeeper" address="192.168.121.128:2181"/>	
+	<dubbo:registry protocol="zookeeper" address="192.168.31.130:2181"/>	
 	<dubbo:reference interface="com.taotao.service.ItemService" id="itemService" />
 	
 	<dubbo:reference interface="com.taotao.service.ItemCatService" id="itemCatService"/>
 	
-	
+	<dubbo:reference interface="com.taotao.content.service.ContentCategoryService" id="contentCategoryService" />
 </beans>
