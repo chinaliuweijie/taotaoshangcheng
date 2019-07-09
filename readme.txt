@@ -35,6 +35,8 @@ https://blog.csdn.net/weixin_39202006/article/details/78870963
 Shift+G 快速到文件末尾   按a或者i进入编辑模式  底部会有insert显示
 按esc 键，输入:wq  保存并推出    :q！ 不保存推出
 
+安装vim ：  yum install vim
+安装gcc：yum install gcc-c++
 
 
 gitignore只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的
