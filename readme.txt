@@ -60,6 +60,11 @@ git clone https://github.com/gubai/gubai.git
  添加商品和商品描述对应的都是单表操作，因此我们使用逆向工程生成的代码即可，也就是说我们不用写Dao层的代码。下面我们来写Service层代码，首先在ItemService接口当中添加一个"添加商品"的接口（这一个接口要操作两张表，一张是商品表，另一张是商品描述表）。如下图所示，参数有两个，一个是商品表的pojo，另一个是商品描述。之所以要抛出异常是因为这个接口要操作两张表，而且这两张表的操作要都成功才叫成功，否则事务就回滚，因此异常要向上抛，在实现类代码中不能用try catch来捕获异常，因为这样的话springmvc会认为代码正常结束了，便不会回滚。
 
 
+redis:下面使用后台启动
 
-
+[root@redis bin]# ./redis-server redis.conf
+查看是否启动：ps -ef|grep redis或ps aux | grep redis
+测试服务
+       使用./redis-cli连接上redis服务，然后使用ping命令，如果返回的是PONG，说明连接没问题
+redis 在centos 7 上面链接不上： 1.注释掉redis.conf文件中 bind 127.0.0.1;2.关闭网络防火墙3.重启
 
