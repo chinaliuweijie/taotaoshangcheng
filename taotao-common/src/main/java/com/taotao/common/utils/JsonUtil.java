@@ -8,6 +8,13 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
  
+/**
+ * 网上说是线程安全的，内部代码用了ThreadLocal、Synchronized这些线程安全类和关键字，可以放心的用。
+
+         避免每次使用都new一个，全局配置一个ObjectManager的对象将大大减少资源。
+ * @author Administrator
+ *
+ */
 public class JsonUtil {
     
 	//定义jackson对象
