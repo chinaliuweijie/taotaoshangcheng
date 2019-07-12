@@ -67,6 +67,10 @@ redis:下面使用后台启动
 测试服务
        使用./redis-cli连接上redis服务，然后使用ping命令，如果返回的是PONG，说明连接没问题
 redis 在centos 7 上面链接不上： 1.注释掉redis.conf文件中 bind 127.0.0.1;2.关闭网络防火墙3.重启
+
+
+启动每个Redis实例:进入/usr/local/redis-cluster目录，redis-cluster目录下使用vim start-all.sh命令来创建一个批处理文件  ./start-all.sh命令来启动每个Redis实例
+使用ps aux|grep redis命令来查看每一个Redis实例的启动进程
 redis 集群启动：
 进入 cd /usr/local/redis-5.0.5/src下执行
 ./redis-cli --cluster create 192.168.121.131:7001 192.168.121.131:7002 192.168.121.131:7003 192.168.121.131:7004 192.168.121.131:7005 192.168.121.131:7006 --cluster-replicas 1
