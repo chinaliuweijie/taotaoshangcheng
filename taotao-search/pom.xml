@@ -10,6 +10,11 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   
+   <modules>
+   	<module>taotao-search-interface</module>
+   	<module>taotao-search-service</module>
+   </modules>
+  
    <dependencies>
   	<dependency>
   		<groupId>com.taotao</groupId>
@@ -30,8 +35,5 @@
   	</plugins>
   </build>
   
-   <modules>
-   	<module>taotao-search-interface</module>
-   	<module>taotao-search-service</module>
-   </modules>
+
 </project>
