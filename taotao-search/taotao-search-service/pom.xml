@@ -71,11 +71,43 @@
 		<groupId>com.github.sgroschupf</groupId>
 		<artifactId>zkclient</artifactId>
 	</dependency>
-	
-	
-	
-	
+	<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	<!--solr  -->
+	<!-- https://mvnrepository.com/artifact/org.apache.solr/solr-solrj -->
+	<dependency>
+	    <groupId>org.apache.solr</groupId>
+	    <artifactId>solr-solrj</artifactId>
+	<!--     <exclusions>
+	    	<exclusion>
+	    		<groupId>org.apache.httpcomponents</groupId>
+	    		<artifactId>httpclient</artifactId>
+	    	</exclusion>
+	    </exclusions> -->
+	</dependency>
   </dependencies>
   
+
+
   
+   <build>
+   
+	   <resources>
+	    <resource>
+	        <directory>${basedir}/src/main/java</directory>
+	        <includes>
+	            <include>**/*.xml</include>
+	        </includes>
+	    </resource>
+	    <resource>
+	        <directory>${basedir}/src/main/resources</directory>
+	    </resource>
+		</resources>
+  </build> 
+ 
+ 
+ 
 </project>

@@ -10,20 +10,22 @@
 	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
     
-    <!-- 配置包扫描器，扫描所有带@Service注解的类 -->
-	<context:component-scan base-package="com.taotao.search.service"/>
+    <!-- 配置单机版Solr -->
+     <!--配置Solr-->
+<!--     <bean id="builder" class="org.apache.solr.client.solrj.impl.HttpSolrClient.Builder">
+ 
+    </bean>
+    <bean id="solr" class="org.apache.solr.client.solrj.impl.HttpSolrClient">
+        <constructor-arg name="builder" value="builder" />
+        <property name="baseURL" value="http://192.168.121.132:8080/solr/new_core" />
+    </bean> -->
 	
-	<!-- 发布dubbo服务 -->
-	<!-- 提供方应用信息，用于计算依赖关系 -->
-	<dubbo:application name="taotao-search" />
-	<!-- 注册中心的地址 -->
-	<dubbo:registry protocol="zookeeper" address="192.168.121.128:2181" />
-	<!-- 用dubbo协议在20880端口暴露服务 -->
-	<dubbo:protocol name="dubbo" port="20882" />
-	<!-- 声明需要暴露的服务接口 -->
-	<!-- <dubbo:service interface="com.taotao.content.service.ContentCategoryService" ref="contentCategoryServiceImpl" timeout="300000"/>
-	 -->
 	
-	<dubbo:service interface="com.taotao.search.service.SearchItemService" ref="searchItemServiceImpl" timeout="300000"/>
+	
+   <!--定义solr的server--> 
+    <bean id="builder" class="org.apache.solr.client.solrj.impl.HttpSolrClient.Builder" >
+        <constructor-arg name="baseSolrUrl" value="http://192.168.121.132:8080/solr/new_core" />
+    </bean> 
+    <bean id="solr" factory-bean="builder" factory-method="build"></bean> 
 	
 </beans>

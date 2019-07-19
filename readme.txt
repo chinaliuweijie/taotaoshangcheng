@@ -83,7 +83,7 @@ set key1 123
 通过命令cluster nodes来查看节点信息
 
 
-
+solr 启动tomcat 就好了
 
 
 

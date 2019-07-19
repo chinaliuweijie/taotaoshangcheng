@@ -28,6 +28,13 @@
 	    <artifactId>taotao-content-interface</artifactId>
 	    <version>0.0.1-SNAPSHOT</version>
   	</dependency>
+    <!--索引库  -->
+    <dependency>
+  		<groupId>com.taotao</groupId>
+	    <artifactId>taotao-search-interface</artifactId>
+	    <version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+    
     
   	<!-- Spring -->
 	<dependency>

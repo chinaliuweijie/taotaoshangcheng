@@ -40,7 +40,7 @@
 	</bean>
 	<!-- Mapper映射文件的包扫描器  自动扫描对象关系映射-->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.taotao.mapper" />
+		<property name="basePackage" value="com.taotao.mapper,com.taotao.search.mapper" />
 	</bean>
 	
 </beans>
