@@ -13,6 +13,16 @@
 	    <artifactId>taotao-manager-pojo</artifactId>
 	    <version>0.0.1-SNAPSHOT</version>
   	</dependency>
+  	
+  		<!--solr  -->
+	<!-- https://mvnrepository.com/artifact/org.apache.solr/solr-solrj -->
+	<dependency>
+	    <groupId>org.apache.solr</groupId>
+	    <artifactId>solr-solrj</artifactId>
+	</dependency>
   </dependencies>
+  
+  
+  
   
 </project>

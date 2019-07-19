@@ -84,6 +84,18 @@ set key1 123
 
 
 solr 启动tomcat 就好了
+   solr 中字段
+   <field name="item_title" type="text_ik" indexed="true" stored="true"/>
+   <field name="item_sell_point" type="text_ik" indexed="true" stored="true"/>
+   <field name="item_price"  type="plong" indexed="true" stored="true"/>
+   <field name="item_image" type="string" indexed="false" stored="true" />
+   <field name="item_category_name" type="string" indexed="true" stored="true" />
+   <field name="item_desc" type="text_ik" indexed="true" stored="false" />
 
+<field name="item_keywords" type="text_ik" indexed="true" stored="false" multiValued="true"/>
+<copyField source="item_title" dest="item_keywords"/>
+<copyField source="item_sell_point" dest="item_keywords"/>
+<copyField source="item_category_name" dest="item_keywords"/>
+<copyField source="item_desc" dest="item_keywords"/>
 
 
