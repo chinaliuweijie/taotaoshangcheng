@@ -99,3 +99,12 @@ solr 启动tomcat 就好了
 <copyField source="item_desc" dest="item_keywords"/>
 
 
+
+家里笔记本电脑配置:                    公司电脑配置：
+zookeeper 地址：31.130                  121.128
+redis 地址：    31.132                  121.131  
+fastdfs地址:    31.131                  121.130
+solr 地址：     31.133                  121.132
+mysql用户名密码： root ""                 root   root
+
+163 邮箱授权码密码：qwert12345

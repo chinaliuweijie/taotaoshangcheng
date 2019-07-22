@@ -105,8 +105,16 @@
 		<artifactId>junit</artifactId>
 		<scope>test</scope>
 	</dependency>
-    
-    
+     <!-- JMail组件 发邮件-->
+	<dependency>
+	  <groupId>javax.mail</groupId>
+      <artifactId>javax.mail-api</artifactId>
+	</dependency>
+     <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+      </dependency>
+
   </dependencies>
   <build>
   	<plugins>
