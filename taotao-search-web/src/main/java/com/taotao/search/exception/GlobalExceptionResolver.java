@@ -8,6 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.taotao.search.utils.SendMail;
+import com.taotao.search.utils.StackTrace;
  
 public class GlobalExceptionResolver implements HandlerExceptionResolver {
 	//获取logger
@@ -23,6 +26,20 @@ public class GlobalExceptionResolver implements HandlerExceptionResolver {
 		//向日志文件中写入异常
 		logger.error("系统发生异常", e);
 		//发邮件（采用jmail客户端进行发送）
+		//发邮件（采用jmail客户端进行发送）
+				Runnable myRunnable = new Runnable() {
+					
+					@Override
+					public void run() {
+						try {
+							SendMail.sendEmail("搜索系统出现异常", StackTrace.getStackTrace(e));
+						} catch (Exception e1) {
+							e1.printStackTrace();
+						}
+					}
+				};
+				Thread thread = new Thread(myRunnable);
+
 	    //发短信
 		//展示错误页面
 		ModelAndView modelAndView = new ModelAndView();

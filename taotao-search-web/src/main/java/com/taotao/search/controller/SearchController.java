@@ -23,7 +23,7 @@ public class SearchController {
     public String search(@RequestParam("q") String queryString,
     		@RequestParam(defaultValue="1") Integer page,Model model) throws Exception{
 			// 人为的抛出异常  测试异常捕获
-			// int aaa = 10/0 ;
+			 int aaa = 10/0 ;
 		
 		
 			queryString = new String(queryString.getBytes("iso8859-1"),"utf-8");
