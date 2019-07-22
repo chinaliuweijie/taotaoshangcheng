@@ -20,7 +20,7 @@ public class TestSolrJ {
 		//创建一个SolrServer对象，创建一个HttpSolrServer对象，需要指定solr服务的url
 		//如果有多个collection则需要指定要操作哪个collection，如果只有一个，可以不指定
 		String solrUrl = "http://192.168.121.132:8080/solr/new_core" ;
-		 HttpSolrClient solrClient = new HttpSolrClient.Builder(solrUrl)
+		HttpSolrClient solrClient = new HttpSolrClient.Builder(solrUrl)
 	                .withConnectionTimeout(10000)
 	                .withSocketTimeout(60000)
 	                .build();

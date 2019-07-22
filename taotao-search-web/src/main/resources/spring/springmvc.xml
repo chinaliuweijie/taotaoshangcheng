@@ -21,7 +21,8 @@
 	<context:component-scan base-package="com.taotao.search.controller"/>
 	
 	
-	
+	<!-- 加载全局异常处理器  出现异常都会进入这个里面-->
+	<bean class="com.taotao.search.exception.GlobalExceptionResolver"/>
 	
 	
 	
@@ -34,7 +35,5 @@
 	<dubbo:application name="taotao-search-web"/>
 	<dubbo:registry protocol="zookeeper" address="192.168.121.128:2181"/>	
 	
-	<!-- <dubbo:reference interface="com.taotao.content.service.ContentService" id="contentService" /> -->
-   
-
+	<dubbo:reference interface="com.taotao.search.service.SearchService" id="searchService" />
 </beans>
