@@ -38,8 +38,7 @@
 		<freemarker.version>2.3.23</freemarker.version>
 		<quartz.version>2.2.2</quartz.version>
 		<fastdfs-client-java.version>1.27-SNAPSHOT</fastdfs-client-java.version>
-		<jmail.version>1.6.2</jmail.version>
-		<javax.mail.version>1.5.5</javax.mail.version>
+		<jmail.version>1.5.0-b01</jmail.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -236,14 +235,10 @@
 			<!-- JMail组件 -->
 			<dependency>
 				<groupId>javax.mail</groupId>
-				<artifactId>javax.mail-api</artifactId>
+				<artifactId>mail</artifactId>
 				<version>${jmail.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>com.sun.mail</groupId>
-				<artifactId>javax.mail</artifactId>
-				<version>${javax.mail.version}</version>
-			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
