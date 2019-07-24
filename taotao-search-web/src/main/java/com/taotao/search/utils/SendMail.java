@@ -77,7 +77,7 @@ public class SendMail {
 		
 		public static void main(String[] args){
 			try {
-				groupSendEmail("出现了异常，请及时处理！", "内容管理系统出现重大错误，请及时进行处理,小妍。你在干嘛啊");
+				groupSendEmail("出现了异常，请及时处理！", "加我好友啊");
 			} catch (javax.mail.MessagingException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

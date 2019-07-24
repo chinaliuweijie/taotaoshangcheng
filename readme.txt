@@ -16,6 +16,8 @@ https://blog.csdn.net/weixin_39202006/article/details/78870963
 5.发送http请求http://localhost:8081/item/830972   可以正确的得到json 数据
 {"id":830972,"title":"飞利浦 老人手机 (X2560) 深情蓝 移动联通2G手机 双卡双待","sellPoint":"赠：九安血压计+8G内存！超长待机，关爱无限，更好用！飞利浦简单健康老人手机！外观圆滑，手感极佳！","price":48900,"num":99999,"barcode":null,"image":"http://image.taotao.com/jd/4f1d41baa6c84219a622f20a4f1c32bb.jpg","cid":560,"status":1,"created":1425821310000,"updated":1425821310000}
 说明启动成功
+6.activitemq 启动过程 bin目录下，然后使用命令./activemq start来启动。
+
 
 
 
@@ -83,7 +85,7 @@ set key1 123
 通过命令cluster nodes来查看节点信息
 
 
-solr 启动tomcat 就好了
+solr 启动tomcat 就好了 bin/startup.sh tailf logs/catalina.out
    solr 中字段
    <field name="item_title" type="text_ik" indexed="true" stored="true"/>
    <field name="item_sell_point" type="text_ik" indexed="true" stored="true"/>
@@ -101,7 +103,7 @@ solr 启动tomcat 就好了
 
 
 家里笔记本电脑配置:                    公司电脑配置：
-zookeeper 地址：31.130                  121.128
+zookeeper activemq地址：31.130                  121.128
 redis 地址：    31.132                  121.131  
 fastdfs地址:    31.131                  121.130
 solr 地址：     31.133                  121.132

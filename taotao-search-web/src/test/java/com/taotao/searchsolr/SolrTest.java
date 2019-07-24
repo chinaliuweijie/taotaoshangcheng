@@ -16,7 +16,7 @@ public class SolrTest {
 	@Test
 	public void queryDocument() throws Exception{
 		//创建一个SolrServer对象，创建一个HttpSolrServer对象，需要指定solr服务的url
-		String solrUrl = "http://192.168.31.133:8080/solr/new_core" ;
+		String solrUrl = "http://192.168.121.132:8080/solr/new_core" ;
 		HttpSolrClient solrClient = new HttpSolrClient.Builder(solrUrl)
 	                .withConnectionTimeout(10000)
 	                .withSocketTimeout(60000)

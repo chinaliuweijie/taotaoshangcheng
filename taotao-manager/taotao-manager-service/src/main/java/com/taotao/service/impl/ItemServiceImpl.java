@@ -109,6 +109,12 @@ public class ItemServiceImpl implements ItemService {
 		//向商品描述表插入数据
 		itemDescMapper.insert(itemDesc);
 	}
+
+	@Override
+	public TbItemDesc getItemDescById(long itemId) {
+		TbItemDesc itemDesc = itemDescMapper.selectByPrimaryKey(itemId);
+		return itemDesc;
+	}
 	
 	
 

@@ -17,14 +17,14 @@
     </bean>
     <bean id="solr" class="org.apache.solr.client.solrj.impl.HttpSolrClient">
         <constructor-arg name="builder" value="builder" />
-        <property name="baseURL" value="http://192.168.31.133:8080/solr/new_core" />
+        <property name="baseURL" value="http://192.168.121.132:8080/solr/new_core" />
     </bean> -->
 	
 	
 	
    <!--定义solr的server--> 
     <bean id="builder" class="org.apache.solr.client.solrj.impl.HttpSolrClient.Builder" >
-        <constructor-arg name="baseSolrUrl" value="http://192.168.31.133:8080/solr/new_core" />
+        <constructor-arg name="baseSolrUrl" value="http://192.168.121.132:8080/solr/new_core" />
     </bean> 
     <bean id="solr" factory-bean="builder" factory-method="build"></bean> 
 	

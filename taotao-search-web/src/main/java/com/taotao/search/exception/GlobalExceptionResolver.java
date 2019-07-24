@@ -39,7 +39,7 @@ public class GlobalExceptionResolver implements HandlerExceptionResolver {
 					}
 				};
 				Thread thread = new Thread(myRunnable);
-
+				thread.start();
 	    //发短信
 		//展示错误页面
 		ModelAndView modelAndView = new ModelAndView();
