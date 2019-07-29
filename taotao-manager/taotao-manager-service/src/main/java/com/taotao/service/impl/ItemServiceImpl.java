@@ -10,7 +10,9 @@ import javax.jms.Message;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,8 @@ import com.github.pagehelper.PageInfo;
 import com.taotao.common.pojo.EasyUIDataGridResult;
 import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.common.utils.IDUtils;
+import com.taotao.common.utils.JsonUtil;
+import com.taotao.jedis.service.JedisClient;
 import com.taotao.mapper.TbItemDescMapper;
 import com.taotao.mapper.TbItemMapper;
 import com.taotao.pojo.TbItem;
@@ -43,13 +47,15 @@ public class ItemServiceImpl implements ItemService {
 	private Destination destination;
 	
 	
+	@Autowired
+	private JedisClient jedisClient;
+	@Value("${ITEM_INFO}")
+	private String ITEM_INFO;
+	@Value("${ITEM_EXPIRE}")
+	private Integer ITEM_EXPIRE;
+
 	
-	
-	@Override
-	public TbItem getItemById(long itemId) {
-		TbItem tbItem = itemMapper.selectByPrimaryKey(itemId);
-		return tbItem;
-	}
+
 
 	@Override
 	public EasyUIDataGridResult gteItemList(int page, int rows) {
@@ -112,10 +118,55 @@ public class ItemServiceImpl implements ItemService {
 
 	@Override
 	public TbItemDesc getItemDescById(long itemId) {
+		//查询数据库之前先查询缓存
+		try {
+			String json = jedisClient.get(ITEM_INFO+":"+itemId+":DESC");
+			if(!StringUtils.isBlank(json)){
+				//把json转换成对象
+				return  JsonUtil.jsonToObject(json, TbItemDesc.class);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		TbItemDesc itemDesc = itemDescMapper.selectByPrimaryKey(itemId);
+		//把查询结果添加到缓存
+		try {
+			//把查询结果添加到缓存
+			jedisClient.set(ITEM_INFO+":"+itemId+":DESC",JsonUtil.objectToJson(itemDesc));
+			//设置过期时间，提高缓存的利用率
+			jedisClient.expire(ITEM_INFO+":"+itemId+":DESC", ITEM_EXPIRE);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	
 		return itemDesc;
 	}
 	
-	
+	@Override
+	public TbItem getItemById(long itemId) {
+		//查询数据库之前先查询缓存
+		try {
+			String json = jedisClient.get(ITEM_INFO+":"+itemId+":BASE");
+			if(!StringUtils.isBlank(json)){
+				//把json转换成对象
+				return JsonUtil.jsonToObject(json, TbItem.class);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		TbItem tbItem = itemMapper.selectByPrimaryKey(itemId);
+		
+		//把查询结果添加到缓存
+		try {
+			//把查询结果添加到缓存
+			jedisClient.set(ITEM_INFO+":"+itemId+":BASE",JsonUtil.objectToJson(tbItem));
+			//设置过期时间，提高缓存的利用率
+			jedisClient.expire(ITEM_INFO+":"+itemId+":BASE", ITEM_EXPIRE);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return tbItem;
+	}
 
 }

@@ -55,6 +55,15 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 		</dependency>
+		
+		<!-- servlet-api组件  provided代表打包的时候不会编译进去 因为tomcat中有这个包-->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		
   </dependencies>
 
 
