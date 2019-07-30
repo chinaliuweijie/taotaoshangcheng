@@ -24,6 +24,13 @@
 	<context:property-placeholder location="classpath:resource/resource.properties"/>
 	
 	
+	
+    <!-- 配置资源映射   别的项目没有配置是应为没有放在web-info 下面，web-info 下面的文件浏览器访问不到-->
+	<mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
+	<mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
+	<mvc:resources location="/WEB-INF/images/" mapping="/images/**"/>
+
+	
 	<!--订阅 dubbo的服务 -->
 	<!-- 引用dubbo服务 -->
 	<dubbo:application name="taotao-sso-web"/>
