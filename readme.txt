@@ -110,3 +110,8 @@ solr 地址：     31.133                  121.132
 mysql用户名密码： root ""                 root   root
 
 163 邮箱授权码密码：qwert12345
+
+linux mysql启动：service mysqld start   重启mysql如下:service mysqld restart
+启动mycat：进入mycat目录，bin/mycat start  查看状态：bin/mycat status
+
+
