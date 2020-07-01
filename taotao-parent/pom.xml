@@ -35,7 +35,7 @@
 		<zookeeper.version>3.4.7</zookeeper.version>
 		<zkclient.version>0.1</zkclient.version>
 		<freemarker.version>2.3.23</freemarker.version>
-		<quartz.version>2.2.2</quartz.version>
+		<quartz.version>2.3.2</quartz.version>
 		<fastdfs-client-java.version>1.27-SNAPSHOT</fastdfs-client-java.version>
 		<jmail.version>1.5.0-b01</jmail.version>
 	<!-- 	 <activemq.version>5.11.2</activemq.version>  -->
